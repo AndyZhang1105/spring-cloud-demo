@@ -1,4 +1,4 @@
-package com.github.qiushijie.callservice;
+package com.zz.cloud.callservice;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

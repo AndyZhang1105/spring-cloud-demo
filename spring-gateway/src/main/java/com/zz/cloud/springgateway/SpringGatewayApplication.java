@@ -1,4 +1,4 @@
-package com.github.qiushijie.springgateway;
+package com.zz.cloud.springgateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

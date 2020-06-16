@@ -1,7 +1,7 @@
 ## 简介
 本文通过创建一个简单是实例，展示spring cloud的应用场景，使用eureka做服务注册和发现，即管理其他服务的是系统的核心，在服务宕机后能给其他服务使用新的服务，不会造成系统无法使用。使用zuul做路由转发和负载均衡，外部访问统一走网关。内部调用使用feign来注解服务，简化调用代码编写。整个spring cloud的微服务的应用雏形就是这样，上手还是非常简单的。
 
-github地址 [spring-cloud-simple](https://github.com/qiushijie/spring-cloud-simple.git)
+github地址 [spring-cloud-demo](https://github.com/AndyZhang1105/spring-cloud-demo.git)
 
 ## 新建项目
 

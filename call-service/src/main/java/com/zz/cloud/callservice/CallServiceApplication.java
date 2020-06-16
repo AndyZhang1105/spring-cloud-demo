@@ -1,4 +1,4 @@
-package com.github.qiushijie.callservice;
+package com.zz.cloud.callservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

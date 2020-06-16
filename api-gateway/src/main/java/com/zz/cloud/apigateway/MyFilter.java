@@ -1,4 +1,4 @@
-package com.github.qiushijie.apigateway;
+package com.zz.cloud.apigateway;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

@@ -1,4 +1,4 @@
-package com.github.qiushijie.helloservice;
+package com.zz.cloud.helloservice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
