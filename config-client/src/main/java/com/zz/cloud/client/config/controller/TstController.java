@@ -11,6 +11,9 @@ import javax.ws.rs.Path;
 @RestController
 public class TstController {
 
+    @Value("${foo}")
+    String foo;
+
     @Value("${my.prop}")
     String myProp;
 
@@ -25,6 +28,11 @@ public class TstController {
     @GetMapping(path = "/zuul")
     public String zuul() {
         return zuulProp;
+    }
+
+    @RequestMapping(value = "/hi")
+    public String hi(){
+        return foo;
     }
 
 }
