@@ -10,4 +10,7 @@ public interface HelloService {
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
     String sayHiFromClientOne();
 
+    @RequestMapping(value = "/tst/index", method = RequestMethod.GET)
+    String sayTstFromClientOne();
+
 }
