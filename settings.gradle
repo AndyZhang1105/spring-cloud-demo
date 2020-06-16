@@ -6,4 +6,5 @@ include 'call-service'
 include 'websocket'
 include 'spring-gateway'
 include 'config-server'
+include 'config-client'
 
