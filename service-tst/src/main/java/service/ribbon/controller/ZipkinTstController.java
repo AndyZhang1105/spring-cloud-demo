@@ -1,4 +1,4 @@
-package helloservice.controller;
+package service.ribbon.controller;
 
 import brave.sampler.Sampler;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,4 +8,5 @@ include 'spring-gateway'
 include 'config-server'
 include 'config-client'
 include 'service-tst'
+include 'serice-ribbon'
 
