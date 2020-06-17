@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "hello-service")
 public interface HelloService {
 
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/tst/index", method = RequestMethod.GET)
     String sayHiFromClientOne();
 
-    @RequestMapping(value = "/tst/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/tst/port", method = RequestMethod.GET)
     String sayTstFromClientOne();
 
 }

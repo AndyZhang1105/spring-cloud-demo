@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/hello")
-public class HelloController {
+@RequestMapping(path = "/tst")
+public class TstController {
 
     @Autowired
     private HelloService helloService;
@@ -17,7 +17,7 @@ public class HelloController {
         return helloService.sayHiFromClientOne();
     }
 
-    @RequestMapping("/tst")
+    @RequestMapping("/port")
     public String tst() {
         return helloService.sayTstFromClientOne();
     }
