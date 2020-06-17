@@ -7,4 +7,5 @@ include 'websocket'
 include 'spring-gateway'
 include 'config-server'
 include 'config-client'
+include 'service-tst'
 

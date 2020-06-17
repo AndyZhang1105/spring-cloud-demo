@@ -1,4 +1,4 @@
-package com.zz.cloud.helloservice;
+package helloservice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-public class HelloServiceApplication {
+public class TstServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloServiceApplication.class, args);
+        SpringApplication.run(TstServiceApplication.class, args);
     }
 
 }
