@@ -21,7 +21,7 @@ public class TstController {
     String zuulProp;
 
     @GetMapping(path = "/props")
-    public String tst() {
+    public String props() {
         return myProp;
     }
 

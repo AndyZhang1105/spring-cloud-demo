@@ -1,0 +1,14 @@
+server:
+  port: 8161
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+
+spring:
+  application:
+    name: service-zipkin
+
+  zipkin:
+    base-url: http://localhost:9411

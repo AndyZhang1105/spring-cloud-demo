@@ -1,17 +1,18 @@
-
 server:
   port: 8881
-
-spring:
-  application:
-    name: config-client
-  cloud:
-    config:
-      label: master
-      profile: dev
-      uri: http://localhost:8888/
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: config-client
+
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8889/
+
