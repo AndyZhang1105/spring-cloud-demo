@@ -15,53 +15,21 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: service-hello
+      - id: limit_service-hello
         uri: lb://service-hello
         predicates:
         - Path=/hello/**
         filters:
         - StripPrefix=1
-      - id: service-demo
-        uri: lb:ws://service-demo
-        predicates:
-        - Path=/demo/**
-        filters:
-        - StripPrefix=1
-      - id: header_route
-        uri: lb://service-hello
-        predicates:
-        - Header=helloToken, \d+
-      - id: cookie_route
-        uri: lb://service-hello
-        predicates:
-        - Cookie=name, zz
-      - id: host_route
-        uri: lb://service-hello
-        predicates:
-        - Host=**.zz.com
-      - id: query_route
-        uri: lb://service-hello
-        predicates:
-        - Query=name, zz
-
-      - id: add_request_header_route
-        uri: http://httpbin.org:80
-        predicates:
-        - Path=/bin/**
-        filters:
-        - StripPrefix=1
-        - AddRequestHeader=X-Request-Foo, Bar
-
-      - id: elapse_route
-        uri: http://httpbin.org:80/get
-        filters:
-        - RequestTime=false
-        - StripPrefix=1
-        predicates:
-        - Path=/elapse/**
-
-
-
+        - name: RequestRateLimiter
+          args:
+            key-resolver: '#{@hostAddrKeyResolver}'
+            redis-rate-limiter.replenishRate: 1
+            redis-rate-limiter.burstCapacity: 10
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
 
 
 

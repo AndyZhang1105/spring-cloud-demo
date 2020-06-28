@@ -1,14 +1,24 @@
 package com.zz.cloud.gateway.spring;
 
+import com.zz.cloud.gateway.spring.filter.RequestTimeGatewayFilterFactory;
+import com.zz.cloud.gateway.spring.filter.TokenFilter;
+import com.zz.cloud.gateway.spring.key.resolver.HostAddrKeyResolver;
+import com.zz.cloud.gateway.spring.key.resolver.UriKeyResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.factory.RequestRateLimiterGatewayFilterFactory;
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
+import org.springframework.cloud.gateway.filter.ratelimit.PrincipalNameKeyResolver;
+import org.springframework.cloud.gateway.filter.ratelimit.RateLimiter;
+import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;
 import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.GatewayFilterSpec;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.context.annotation.Conditional;
 import reactor.core.publisher.Mono;
 
 @EnableDiscoveryClient
@@ -60,5 +70,25 @@ public class GatewaySpingApplication {
     public TokenFilter tokenFilter(){
         return new TokenFilter();
     }
+
+    @Bean
+    public HostAddrKeyResolver hostAddrKeyResolver() {
+        return new HostAddrKeyResolver();
+    }
+
+//    @Bean
+//    public UriKeyResolver uriKeyResolver() {
+//        return new UriKeyResolver();
+//    }
+//
+//    @Bean
+//    KeyResolver userKeyResolver() {
+//        return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("user"));
+//    }
+//
+//    @Bean
+//    KeyResolver apiKeyResolver() {
+//        return exchange -> Mono.just(exchange.getRequest().getPath().value());
+//    }
 
 }
